@@ -13,7 +13,7 @@ A gestão de clientes tem sido um dos grandes problemas que muitas empresas enfr
 Um dos objetivos principais da nossa aplicação é a implementação de um conjunto de medidas que visam garantir a integridade da informação armazenada bem como uma gestão segura no acesso à mesma. Criaremos uma sistema que permitirá aos gestores fazer uma melhor gestão de toda a informação existente dentro do cliGest, e para tal, teremos um administrador que, tal como citamos acima, representa a pessoa responsável por toda a gestão dos dados. O administrador é o único que pode criar novos utilizadores e consultar toda a informacão do cliGest, necessitando de fazer um Login para aceder à informação.
 
 
-#Dentro da Base de dados onde só um admnistrador terá acesso, teremos alguns módulos importantes citados abaixo
+**Dentro da Base de dados onde só um admnistrador terá acesso, teremos alguns módulos importantes citados abaixo**
 
 *Gestão de Clientes:*
 
