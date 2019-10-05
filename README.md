@@ -4,7 +4,7 @@
 ###### Douglas Bewiahn - 50038630
 
 
- **Enquadramento**
+**Enquadramento**
 Este documento representa o Briefing do projeto no âmbito da unidade curricular de Programação Orientada por Objectos em conjunto com a unidade curricular de Bases de Dados, do curso de Engenharia Informática da Universidade Europeia. Um documento que descreve as principais etapas/funcionalidades de uma aplicação.
 A gestão de clientes tem sido um dos grandes problemas que muitas empresas enfrentam, não só pelo fluxo de informação que é gerado mas também devido aos recursos utilizados para se fazer essa gestão. Para solucionar esta problemática, criamos o cliGest, uma aplicação que está virada para empresas no ramo da saúde (ie. clinicas, hospitais, centro/posto médico, etc)  de forma a permitir aos gestores um melhor controle de toda a informção relevante, com a finalidade de gerir as agendas de cada médico/cliente para a marcação e realização de consultas. Consideramos que a organização dentro de uma empresa é um factor muito importante e que o atendimento rápido e eficiente é um ponto crucial para fidelizar clientes.
 
@@ -64,5 +64,6 @@ Neste módulo será possivel fazer a gestão das consultas de cada cliente. Ser�
 
 **Cenário Secundário**
 Como cenário secundário teremos um ambiente diferente onde qualquer utilizador poderá aceder à aplicação.
-Neste cenário não estarão visível todos os dados da base de dados
+Neste perfil não estarão visíveis todos os dados da base de dados, tdeve estar disponível apenas para visualizar os dados de consultas, médicos, histórico do paciente, etc, não sendo permitida a alteração de nenhum dos dados.
+
 
