@@ -23,5 +23,5 @@ O usuário poderá alocar os pacientes cadastrados a um slot de tempo de um méd
 ## **Referências**
 Aplicações, com alguma semelhança, existentes no mercado:
 
-*https://www.saudecuf.pt/mycuf/
-*https://www.sns.gov.pt/apps/mysns/
+* [1] (https://www.saudecuf.pt/mycuf/)
+* [2] (https://www.sns.gov.pt/apps/mysns/)
