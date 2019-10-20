@@ -6,8 +6,10 @@
 
 ## **Enquadramento**
 
-Este documento representa o Briefing do projeto no âmbito da unidade curricular Programação Orientada por Objectos em conjunto com a unidade curricular Bases de Dados, do curso de Engenharia Informática da Universidade Europeia. Um documento que descreve as principais etapas/funcionalidades de uma aplicação.
-A gestão de clientes tem sido um dos grandes problemas que muitas empresas enfrentam, não só pelo fluxo de informação que é gerado mas também devido aos recursos utilizados para se fazer essa gestão. Para solucionar esta problemática, criamos o cliGest, uma aplicação que está virada para empresas no ramo da saúde, mais propriamente clínicas, de forma a permitir aos gestores um melhor controle de toda a informação relevante, com a finalidade de gerir as agendas de cada médico/cliente para a marcação e realização de consultas. Consideramos que a organização dentro de uma empresa é um factor muito importante e que o atendimento rápido e eficiente é um ponto crucial para fidelizar clientes.
+Este documento representa o Briefing do projeto no âmbito das unidadse curriculares de Programação Orientada por Objectos em conjunto com Bases de Dados e Competências Comunicacionais, do curso de Engenharia Informática da Universidade Europeia. Um documento que descreve as principais etapas/funcionalidades de uma aplicação.
+
+A gestão de clientes tem sido um dos grandes problemas que muitas empresas enfrentam, não só pelo fluxo de informação que é gerado mas também devido aos recursos utilizados para se fazer essa gestão. Para solucionar esta problemática, criamos o cliGest, uma aplicação que está virada para empresas no ramo da saúde, mais propriamente clínicas, de forma a permitir aos gestores um melhor controle de toda a informação relevante, com a finalidade de gerir as agendas de cada médico/cliente para a marcação e realização de consultas. Em nossa pesquisa, encontramos algumas aplicacoes como o mycuf, Portal SNS e zappysoftware com algumas funcionalidades semelhantes.
+Consideramos que a organização dentro de uma empresa é um factor muito importante e que o atendimento rápido e eficiente é um ponto crucial para fidelizar clientes portanto uma aplicação intuitiva, otimizada e fiável é essencial. 
 
 ## **Cenário Principal**
 
