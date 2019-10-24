@@ -16,6 +16,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+			
 			FXMLLoader loader = new FXMLLoader(
 					Main.class.getResource("views/cligestView.fxml"));
 			loader.setController(new CligestController());;
