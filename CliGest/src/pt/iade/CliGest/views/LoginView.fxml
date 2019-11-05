@@ -7,13 +7,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Sphere?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="cligestT" accessibleRole="COMBO_BOX" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane accessibleRole="COMBO_BOX" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="258.0" layoutY="372.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="84.0" text="Login" textFill="#171717">
+      <Button fx:id="loginBT" layoutX="258.0" layoutY="372.0" mnemonicParsing="false" onAction="#loginTela" prefHeight="29.0" prefWidth="84.0" text="Login" textFill="#171717">
          <font>
             <Font size="15.0" />
          </font></Button>
@@ -27,7 +26,7 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Text fill="#0d406f" layoutX="248.0" layoutY="114.0" stroke="#eaeef2" strokeDashOffset="9.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="CliGest">
+      <Text fx:id="labelstatusLB" fill="#0d406f" layoutX="248.0" layoutY="114.0" stroke="#eaeef2" strokeDashOffset="9.0" strokeLineJoin="ROUND" strokeWidth="0.0" text="CliGest">
          <font>
             <Font name="Kailasa Regular" size="32.0" />
          </font>
@@ -35,9 +34,8 @@
             <Glow />
          </effect>
       </Text>
-      <TextField layoutX="292.0" layoutY="198.0" />
-      <PasswordField layoutX="292.0" layoutY="264.0" />
-      <Sphere layoutX="385.0" layoutY="103.0" radius="25.0" />
-      <ComboBox layoutX="14.0" layoutY="531.0" prefWidth="150.0" promptText="User" />
+      <TextField fx:id="usernameBT" layoutX="292.0" layoutY="198.0" />
+      <PasswordField fx:id="passwordBT" layoutX="292.0" layoutY="264.0" />
+      <ComboBox fx:id="comboBT" layoutX="14.0" layoutY="531.0" prefWidth="150.0" promptText="Admnistrador" />
    </children>
 </AnchorPane>

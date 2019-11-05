@@ -1,0 +1,19 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.AnchorPane {
+	-fx-background-image: url(menucligest.png);
+	-fx-pref-height: 600px;
+	-fx-pref-width: 600px;
+	
+}
+
+button.agendar {
+	-fx-pref-height: 182px;
+	-fx-pref-width: 50px;
+	-fx-background-color:cyan;
+	-fx-font-size: 20pt;
+	-fx-font-family: "Times new Roman", Georgia, Serif;
+	-fx-border-style:dashed ;
+	
+	
+}

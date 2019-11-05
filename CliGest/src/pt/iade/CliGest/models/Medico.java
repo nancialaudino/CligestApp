@@ -1,6 +1,11 @@
 package pt.iade.CliGest.models;
-
+/*
 public class Medico extends Utilizador {
+	public Medico() {
+		
+		// TODO Auto-generated constructor stub
+	}
+
 	private double nrCedula;
 	private String especialidade;
 	
@@ -21,3 +26,4 @@ public class Medico extends Utilizador {
 	}
 
 }
+*/

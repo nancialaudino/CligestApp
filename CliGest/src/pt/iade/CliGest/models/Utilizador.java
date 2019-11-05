@@ -1,71 +1,26 @@
 package pt.iade.CliGest.models;
 
 public class Utilizador {
-	private String nome;
-	private String dataNascimento;
-	private String morada;
-	private double codPostal;
-	private String login;
-	private String password;
-	private double telefone;
-	private Utilizador user;
+	private String categoria;
 	
+	//private Utilizador user;
 	
-	public String getNome() {
-		return nome;
+	public Utilizador (String categoria) {
+		this.categoria = categoria;
+		
+		
 	}
 	
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
 	
-	public String getDataNascimento() {
-		return dataNascimento;
+	public String getCategoria() {
+		return categoria;
 	}
-	
-	public void setDataNascimento(String dataNascimento) {
-		this.dataNascimento = dataNascimento;
+
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
-	
-	public String getMorada() {
-		return morada;
-	}
-	
-	public void setMorada(String morada) {
-		this.morada = morada;
-	}
-	
-	public double getCodPostal() {
-		return codPostal;
-	}
-	
-	public void setCodPostal(double codPostal) {
-		this.codPostal = codPostal;
-	}
-	
-	public String getLogin() {
-		return login;
-	}
-	
-	public void setLogin(String login) {
-		this.login = login;
-	}
-	
-	public String getPassword() {
-		return password;
-	}
-	
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
-	public double getTelefone() {
-		return telefone;
-	}
-	
-	public void setTelefone(double telefone) {
-		this.telefone = telefone;
-	}
+
 
 	public void addUtilizador (Utilizador user) {
 		

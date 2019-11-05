@@ -1,6 +1,11 @@
 package pt.iade.CliGest.models;
-
+/*
 public class Paciente extends Utilizador {
+	public Paciente(String nome, String dataNascimento, String morada, Double telefone) {
+		super(nome, dataNascimento, morada, telefone);
+		// TODO Auto-generated constructor stub
+	}
+
 	private String seguradora;
 	private String relatorioMedico;
 	private String exames;
@@ -30,3 +35,4 @@ public class Paciente extends Utilizador {
 
 	
 }
+*/
