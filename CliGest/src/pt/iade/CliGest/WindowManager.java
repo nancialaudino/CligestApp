@@ -13,6 +13,7 @@ import pt.iade.CliGest.controllers.MainController;
 import pt.iade.CliGest.controllers.MedicoController;
 import pt.iade.CliGest.controllers.MenuController;
 import pt.iade.CliGest.models.Agendamento;
+import pt.iade.CliGest.controllers.AgendamentoController;
 import pt.iade.CliGest.controllers.EspecialidadeController;
 import pt.iade.CliGest.controllers.LoginController;
 import pt.iade.CliGest.Main;
@@ -71,6 +72,11 @@ public class WindowManager {
 				primaryStage,new MedicoController());
    		
 	}
+   
+   public static void agendar () {
+	   openSceneInWindow("views/Agendamento.fxml",
+				primaryStage,new AgendamentoController());
+   }
    
    /*
    public static void comboBox () {

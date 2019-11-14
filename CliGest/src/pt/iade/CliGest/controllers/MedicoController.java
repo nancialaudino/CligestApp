@@ -7,12 +7,13 @@ import pt.iade.CliGest.WindowManager;
 public class MedicoController {
 	 @FXML
 	    void avancar(ActionEvent event) {
+		WindowManager.agendar();
 
 	    }
 
 	    @FXML
 	    void voltar(ActionEvent event) {
-	    	
+
 	    	WindowManager.agendarConsulta();
 
 	    }

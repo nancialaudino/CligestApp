@@ -10,11 +10,11 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
-      <Button fx:id="pacienteSBT" layoutX="54.0" layoutY="201.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="180.0" style="-fx-background-color: whitesilver; -fx-border-color: darkblue; -fx-border-radius: 10; -fx-border-width: 3;" text="Pacientes">
+      <Button fx:id="pacienteSBT" layoutX="54.0" layoutY="172.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="180.0" style="-fx-background-color: whitesilver; -fx-border-color: darkblue; -fx-border-radius: 10; -fx-border-width: 3;" text="Pacientes">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Button fx:id="medicosBT" layoutX="48.0" layoutY="345.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="186.0" style="-fx-background-color: whitesilver; -fx-border-color: darkblue; -fx-border-radius: 10; -fx-border-width: 3;" text="Médicos">
+      <Button fx:id="medicosBT" layoutX="51.0" layoutY="286.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="186.0" style="-fx-background-color: whitesilver; -fx-border-color: darkblue; -fx-border-radius: 10; -fx-border-width: 3;" text="Médicos">
          <font>
             <Font size="18.0" />
          </font></Button>
@@ -22,5 +22,10 @@
          <font>
             <Font size="14.0" />
          </font></Button>
+      <Button fx:id="medicosBT1" layoutX="51.0" layoutY="401.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="186.0" style="-fx-background-color: whitesilver; -fx-border-color: darkblue; -fx-border-radius: 10; -fx-border-width: 3;" text="Agendamentos">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
