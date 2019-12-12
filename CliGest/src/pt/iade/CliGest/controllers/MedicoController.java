@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import pt.iade.CliGest.WindowManager;
+import pt.iade.CliGest.models.Agendamento;
 import pt.iade.CliGest.models.Medico;
 import pt.iade.CliGest.models.daos.CligestDAO;
 
@@ -15,7 +16,12 @@ public class MedicoController {
     private ListView<String> medicoLV;
 	private ObservableList<Medico> medicos;
 	
+	private Agendamento agendamento;
 	
+	public MedicoController(Agendamento agendamento) {
+		this.agendamento = agendamento;
+	}
+
 	@FXML
 	private void initialize () {
 		medicos = CligestDAO.getMedicos();

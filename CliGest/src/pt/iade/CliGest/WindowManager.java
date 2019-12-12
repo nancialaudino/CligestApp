@@ -82,11 +82,12 @@ public class WindowManager {
    }
 	
    /**Metodo usado na classe EspecialidadeController para avançar para a página seguinte
-    * onde é feita a escolha do Médico*/
+    * onde é feita a escolha do Médico
+ * @param agendamento */
    
-   public static void seguinte () {
+   public static void seguinte (Agendamento agendamento) {
 	   openSceneInWindow("views/selectMedico.fxml",
-				primaryStage,new MedicoController());
+				primaryStage,new MedicoController(agendamento));
    		
 	}
    

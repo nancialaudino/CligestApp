@@ -52,9 +52,8 @@ public class EspecialidadeController {
     @FXML
     void seguinte(ActionEvent event) {
 		Especialidade especEscolhida = especialidadeLV.getSelectionModel().getSelectedItem();
-    	
-    	
-    	WindowManager.seguinte();
+    	agendamento.setEspecialidade(especEscolhida);
+    	WindowManager.seguinte(agendamento);
 
     }
     
