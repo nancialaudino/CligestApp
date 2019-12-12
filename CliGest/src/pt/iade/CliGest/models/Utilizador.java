@@ -1,37 +1,30 @@
 package pt.iade.CliGest.models;
 
 public class Utilizador {
-	private String categoria;
 	
-	//private Utilizador user;
+	private String nome;
 	
-	public Utilizador (String categoria) {
-		this.categoria = categoria;
+	
+	
+	public Utilizador(String nome) {
 		
+		this.nome = nome;
 		
-	}
-	
-	
-	public String getCategoria() {
-		return categoria;
 	}
 
 
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
+
+
+
+	public String getNome() {
+		return nome;
 	}
 
 
-	public void addUtilizador (Utilizador user) {
-		
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	
-    public void editarUtilizador (Utilizador user) {
-		
-	}
-    
-    public void eliminarUtilizador (Utilizador user) {
-	
-    }
+
 
 }

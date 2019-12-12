@@ -49,7 +49,10 @@ public class LoginController {
     private Text labelstatusLB;
     
     
-    
+    /** Método que faz a autenticação do utilizador
+     * Verfifica se o username e a password estão corretos
+     * para que o utilizador possa aceder à aplicação, se tiverem 
+     * incorretos devolve um erro. */
     @FXML
     public void loginTela (ActionEvent event) throws IOException {
     	if (usernameBT.getText().equals("user") && passwordBT.getText().equals("12345")) {

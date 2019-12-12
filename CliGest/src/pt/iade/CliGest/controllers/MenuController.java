@@ -16,10 +16,34 @@ public class MenuController {
     	
     }
     
-    
     @FXML
     private void agendar (ActionEvent event) {
     	WindowManager.agendarConsulta();
     	
     }
+    
+    @FXML
+    void verAgendamentos(ActionEvent event) {
+    	WindowManager.listaAgendamentos();
+    }
+
+    
+    
+    @FXML
+    void verListaPacientes(ActionEvent event) {
+    	WindowManager.verPacientes();
+    	
+    }
+    
+    
+    @FXML
+    void verListaMedicos(ActionEvent event) {
+    	WindowManager.verMedicos(); 
+
+    }
+    
+    
+    
+    
+    
 }

@@ -6,12 +6,15 @@ import pt.iade.CliGest.WindowManager;
 
 public class AgendamentoController {
 	
+	
+	
+	
 	@FXML
     void agendar (ActionEvent event) {
 		WindowManager.openMenuWindow();
 		
 
     }
-
+ 
  
 }

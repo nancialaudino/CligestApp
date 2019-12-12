@@ -12,8 +12,11 @@ import javafx.stage.Stage;
 import pt.iade.CliGest.controllers.MainController;
 import pt.iade.CliGest.controllers.MedicoController;
 import pt.iade.CliGest.controllers.MenuController;
+import pt.iade.CliGest.controllers.PacienteController;
+import pt.iade.CliGest.controllers.PacienteListaController;
 import pt.iade.CliGest.models.Agendamento;
 import pt.iade.CliGest.controllers.AgendamentoController;
+import pt.iade.CliGest.controllers.AgendamentoListaController;
 import pt.iade.CliGest.controllers.EspecialidadeController;
 import pt.iade.CliGest.controllers.LoginController;
 import pt.iade.CliGest.Main;
@@ -25,7 +28,7 @@ public class WindowManager {
 
 	public static void setPrimaryStage(Stage primaryStage) {
 		WindowManager.primaryStage = primaryStage;
-	}
+	} 
 
 
 	public static void backToMainWindow() {
@@ -62,7 +65,21 @@ public class WindowManager {
    		
 	}
    
+   /**Metodo usado para a ver a lista de todos os pacinetes inseridos
+    * dentro da base de dados*/
    
+   public static void verPacientes () {
+	   openSceneInWindow("views/pacientesLista.fxml",
+				primaryStage,new PacienteListaController());
+   }
+   
+   /**Metodo usado para a ver a lista de todos os pacinetes inseridos
+    * dentro da base de dados*/
+   
+   public static void verMedicos () {
+	   openSceneInWindow("views/medicosLista.fxml",
+				primaryStage,new MedicoController());
+   }
 	
    /**Metodo usado na classe EspecialidadeController para avançar para a página seguinte
     * onde é feita a escolha do Médico*/
@@ -73,11 +90,27 @@ public class WindowManager {
    		
 	}
    
+   /**Método usado para agendar uma consulta*/
    public static void agendar () {
 	   openSceneInWindow("views/Agendamento.fxml",
 				primaryStage,new AgendamentoController());
    }
    
+   
+  /**Método usado para ver a lista de agendamentos
+   * quer sejam os da base de dados ou feitos pela aplicação*/
+   public static void listaAgendamentos () {
+	   openSceneInWindow("views/agendamentosLista.fxml",
+				primaryStage,new AgendamentoListaController());
+   }
+   
+   /**Método usado para ver a lista de pacientes da base dados
+    * para se poder fazer um agendamento*/
+   public static void selectPaciente () {
+	   openSceneInWindow("views/selectPaciente.fxml",
+				primaryStage,new PacienteController());
+   }
+    
    /*
    public static void comboBox () {
 	   openSceneInWindow("views/LoginView.fxml",
@@ -86,10 +119,10 @@ public class WindowManager {
 	}
    */
 	
-  
-	public static double tela=0;
+   /** Método usado para abrir a jenela principal da aplicação,
+	 * a janela do Login */
+	
 	public static void openMainWindow() {
-		
 		
 		openWindow("views/LoginView.fxml",
 				primaryStage,new LoginController());
@@ -98,10 +131,6 @@ public class WindowManager {
 	
 	}
 	
-	
-	
-	
-
 	
 	public static void openSceneInWindow(String viewPath, Stage window,
 			Object controller) {

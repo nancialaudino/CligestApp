@@ -10,7 +10,7 @@
    <children>
       <Button fx:id="voltarBT" layoutX="33.0" layoutY="506.0" mnemonicParsing="false" onAction="#voltar" prefHeight="45.0" prefWidth="83.0" text="Anterior" />
       <Button fx:id="avancarBT" layoutX="476.0" layoutY="506.0" mnemonicParsing="false" onAction="#avancar" prefHeight="45.0" prefWidth="83.0" text="Seguinte" />
-      <ListView layoutX="48.0" layoutY="105.0" prefHeight="367.0" prefWidth="499.0" />
+      <ListView fx:id="medicoLV" layoutX="48.0" layoutY="105.0" prefHeight="367.0" prefWidth="499.0" />
       <Label layoutX="163.0" layoutY="57.0" text="Seleccione o Médico">
          <font>
             <Font size="29.0" />

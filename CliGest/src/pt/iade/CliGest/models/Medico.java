@@ -1,29 +1,40 @@
 package pt.iade.CliGest.models;
-/*
-public class Medico extends Utilizador {
-	public Medico() {
-		
-		// TODO Auto-generated constructor stub
+
+public class Medico  {
+	private String nome;
+	private String especialidade;
+	private double contacto;
+	
+	public Medico(String nome /*, String especialidade, double contacto*/) {
+		this.nome = nome;
+		//this.especialidade = especialidade;
+		//this.contacto = contacto;
 	}
 
-	private double nrCedula;
-	private String especialidade;
-	
-	public double getNrCedula() {
-		return nrCedula;
+	public String getNome() {
+		return nome;
 	}
-	
-	public void setNrCedula(double nrCedula) {
-		this.nrCedula = nrCedula;
+/*
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	
+
 	public String getEspecialidade() {
 		return especialidade;
 	}
-	
+
 	public void setEspecialidade(String especialidade) {
 		this.especialidade = especialidade;
 	}
 
+	public double getContacto() {
+		return contacto;
+	}
+
+	public void setContacto(double contacto) {
+		this.contacto = contacto;
+	}
+
+	
+	*/
 }
-*/

@@ -21,12 +21,11 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		WindowManager.setPrimaryStage(primaryStage);
 		WindowManager.openMainWindow();
-	
+		//WindowManager.agendarConsulta();
 		
 		
 	}
 
-	
 	
 	
 	public static void main(String[]  args) {

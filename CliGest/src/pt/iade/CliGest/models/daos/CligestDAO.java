@@ -1,41 +1,151 @@
-/*package pt.iade.CliGest.models.daos;
+package pt.iade.CliGest.models.daos;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import pt.iade.CliGest.models.Login;
 import pt.iade.CliGest.models.Medico;
-import pt.iade.CliGest.models.Paciente;
 import pt.iade.CliGest.models.Utilizador;
 import pt.iade.CliGest.models.Agendamento;
+import pt.iade.CliGest.models.Especialidade;
 
-public final class CligestDAO {
+
+public class CligestDAO {
 	
-	private CligestDAO() {}
-
-	private static ObservableList<Medico> medicos =
-			FXCollections.observableArrayList();
-
-	public static ObservableList<Medico> getNome() {
-		return medicos;
-	}
+	/** Metodo que vai buscar os dados de Logins dentro
+	 * base de dados. */
 	
-	// A static block is called the first time the class
-	// is used 
-	// We will use it to initialize all static attributes
-	static {
-		ObservableList<Medico> medicos = 
+	public static ObservableList <Login> getLogins() {
+		ObservableList<Login> logins =
 				FXCollections.observableArrayList();
-		medicos.add(new Medico("Compras de Natal",items));
-		// I can add items after adding the lost to shoplist
-		// The shoplist has a reference to the same list as "items"
-		medicos.add(new Medico(1,new Product("Peru 2kg",10.4)));
-		items.add(new Item(4.0,new Product("Batatas",0.9)));
-		items.add(new Item(0.5,
-				new ImportedProduct("Chocolate Belga",2.3,"França","L&A")));
-		items = FXCollections.observableArrayList();
-		shopLists.add(new ShopList("Compras de Novembro",items));
-		items.add(new Item(4.0,new Product("Batatas",0.9)));
-		items.add(new Item(4.0,new Product("Cebolas",0.56)));
+		Connection conn =  DBConnector.getConnection();
+		try (Statement stat = conn.createStatement();
+				ResultSet rs = 
+						stat.executeQuery("Select * from Login"))
+		{
+			while (rs.next()) {
+				String username= rs.getString("Login");
+				int pass = rs.getInt("Password");
+				logins.add(new Login(pass,username));
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}  
+
+		return logins;
+		
 	}
+	
+	
+	/** Metodo que vai buscar os dados dos utilizadores dentro
+	 * base de dados. */
+	
+	public static ObservableList <Utilizador> getUtilizadores() {
+		ObservableList<Utilizador> utilizadores =
+				FXCollections.observableArrayList();
+		Connection conn =  DBConnector.getConnection();
+		try (Statement stat = conn.createStatement();
+				ResultSet rs = 
+						stat.executeQuery("select nome_utilizador from Utilizador join Categoria on categoria_id=cid where nome_categoria = 'Paciente'"))
+		{
+			while (rs.next()) {
+				String nome = rs.getString("nome_utilizador");
+				utilizadores.add(new Utilizador (nome));
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+
+		return utilizadores;
+				
+	}
+	
+
+	
+	
+	/** Metodo que vai buscar os dados dos médicos dentro
+	 * base de dados.*/
+	public static ObservableList <Medico> getMedicos() {
+		ObservableList<Medico> medicos =
+				FXCollections.observableArrayList();
+		Connection conn =  DBConnector.getConnection();
+		try (Statement stat = conn.createStatement();
+				ResultSet rs = 
+						stat.executeQuery("Select nome_medico from Medico"))
+		{
+			while (rs.next()) {
+				String nome = rs.getString("nome_medico");
+				//String especialidade = rs.getString("Especialidade");
+				//double contacto = rs.getDouble("Contacto");
+				medicos.add(new Medico(nome));
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+
+		return medicos;
+				
+	}
+	
+	/** Metodo que vai buscar os dados da Especialidade dentro
+	 * base de dados.*/
+	public static ObservableList <Especialidade> getEspecialidades() {
+		ObservableList<Especialidade> especialidades =
+				FXCollections.observableArrayList();
+		Connection conn =  DBConnector.getConnection();
+		try (Statement stat = conn.createStatement();
+				ResultSet rs = 
+						stat.executeQuery("Select nome_especialidade from Especialidade"))
+		{
+			while (rs.next()) {
+				String nomeEspecialidade = rs.getString("nome_especialidade");
+				especialidades.add (new Especialidade (nomeEspecialidade));
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+
+		return especialidades;
+				
+	}
+	
+	
+	
+	/** Metodo que vai buscar os dados de agendamentos dentro
+	 * base de dados.*/
+	public static ObservableList <Agendamento> getAgendamentos() {
+		ObservableList<Agendamento> agendamentos =
+				FXCollections.observableArrayList();
+		Connection conn =  DBConnector.getConnection();
+		try (Statement stat = conn.createStatement();
+				ResultSet rs = 
+						stat.executeQuery("Select data_consulta from Agendamento"))
+		{
+			while (rs.next()) {
+				String medico = rs.getString("Médico");
+				String especialidade = rs.getString("Especialidade");
+				String paciente = rs.getString("Paciente");
+				String data = rs.getString("Data");
+				String hora = rs.getString("Hora");
+				agendamentos.add(new Agendamento(medico,especialidade,paciente, data, hora));
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+
+		return agendamentos;
+				
+	}
+	
+	
+	
 }
-
-
-*/
