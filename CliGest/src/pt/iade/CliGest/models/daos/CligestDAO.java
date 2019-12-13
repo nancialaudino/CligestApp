@@ -127,20 +127,30 @@ public class CligestDAO {
 		Connection conn =  DBConnector.getConnection();
 		try (Statement stat = conn.createStatement();
 				ResultSet rs = 
-						stat.executeQuery("Select data_consulta from Agendamento"))
+						stat.executeQuery("select Especialidade.nome_especialidade, Utilizador.nome_utilizador, Medico.nome_medico, Agendamento.data_consulta, Agendamento.hora_consulta" + 
+								" FROM Agendamento JOIN Especialidade ON Agendamento.especialidade_id = Especialidade.eid JOIN Utilizador ON Agendamento.utilizador_id = uid" + 
+								" JOIN Medico ON Agendamento.medico_id=Medico.mid;");
+		)
 		{
 			while (rs.next()) {
-				String medico = rs.getString("Médico");
-				String especialidade = rs.getString("Especialidade");
-				String paciente = rs.getString("Paciente");
-				String data = rs.getString("Data");
-				String hora = rs.getString("Hora");
-				agendamentos.add(new Agendamento(medico,especialidade,paciente, data, hora));
-
+			
+				String medico = rs.getString("nome_medico");
+				System.out.println(medico);
+				String especialidade = rs.getString("nome_especialidade");
+				System.out.println(especialidade);
+				String paciente = rs.getString("nome_utilizador");
+				System.out.println(paciente);
+				String data = rs.getString("data_consulta");
+				System.out.println(data);
+				String hora = rs.getString("hora_consulta");
+				System.out.println(hora);
+				agendamentos.add(new Agendamento(medico,especialidade, paciente, data, hora));		
 			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} 
+		
 
 		return agendamentos;
 				

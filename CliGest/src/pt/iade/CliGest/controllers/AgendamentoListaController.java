@@ -5,31 +5,28 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import pt.iade.CliGest.WindowManager;
 import pt.iade.CliGest.models.Agendamento;
 import pt.iade.CliGest.models.Especialidade;
 import pt.iade.CliGest.models.daos.CligestDAO;
 
 public class AgendamentoListaController {
-	private String agendEscolhido;
+	//private String agendEscolhido;
+	
+	
+
 	@FXML
-    private ListView<String> agendamentosLV;
+    private ListView<Agendamento> agendamentosLV;
     private ObservableList<Agendamento> agendamentos;
     @FXML
 	private void initialize () {
-    	agendamentos = CligestDAO.getAgendamentos();
-    	ObservableList<String> nomes = FXCollections.observableArrayList();
-    	for(int i = 0; i < agendamentos.size(); i++ ) {
-    		nomes.add(agendamentos.get(i).getData());
-    	}
-    	agendamentosLV.setItems(nomes);
-    	agendamentosLV.getSelectionModel();
+
+    	agendamentos=CligestDAO.getAgendamentos();
+    	agendamentos.toString();
+    	agendamentosLV.setItems(agendamentos);
     	
-    	agendamentosLV.setOnMouseClicked(
-    			(event) ->{
-    				agendEscolhido = agendamentosLV.getSelectionModel().getSelectedItem();
-    				System.out.println(agendEscolhido);
-    			});
 
 }
     
@@ -37,6 +34,8 @@ public class AgendamentoListaController {
     void fechar (ActionEvent event) {
 	WindowManager.openMenuWindow();
     }
+    
+    
 
 }
 

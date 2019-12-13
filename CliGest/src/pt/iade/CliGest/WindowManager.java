@@ -11,6 +11,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import pt.iade.CliGest.controllers.MainController;
 import pt.iade.CliGest.controllers.MedicoController;
+import pt.iade.CliGest.controllers.MedicoListaController;
 import pt.iade.CliGest.controllers.MenuController;
 import pt.iade.CliGest.controllers.PacienteController;
 import pt.iade.CliGest.controllers.PacienteListaController;
@@ -75,11 +76,12 @@ public class WindowManager {
    
    /**Metodo usado para a ver a lista de todos os pacinetes inseridos
     * dentro da base de dados*/
-   
+  
    public static void verMedicos () {
 	   openSceneInWindow("views/medicosLista.fxml",
-				primaryStage,new MedicoController());
+				primaryStage,new MedicoListaController());
    }
+   
 	
    /**Metodo usado na classe EspecialidadeController para avançar para a página seguinte
     * onde é feita a escolha do Médico
@@ -91,10 +93,11 @@ public class WindowManager {
    		
 	}
    
-   /**Método usado para agendar uma consulta*/
-   public static void agendar () {
+   /**Método usado para agendar uma consulta
+ * @param agendamento */
+   public static void agendar (Agendamento agendamento) {
 	   openSceneInWindow("views/Agendamento.fxml",
-				primaryStage,new AgendamentoController());
+				primaryStage,new AgendamentoController(agendamento));
    }
    
    
@@ -106,10 +109,11 @@ public class WindowManager {
    }
    
    /**Método usado para ver a lista de pacientes da base dados
-    * para se poder fazer um agendamento*/
-   public static void selectPaciente () {
+    * para se poder fazer um agendamento
+ * @param agendamento */
+   public static void selectPaciente (Agendamento agendamento) {
 	   openSceneInWindow("views/selectPaciente.fxml",
-				primaryStage,new PacienteController());
+				primaryStage,new PacienteController(agendamento));
    }
     
    /*

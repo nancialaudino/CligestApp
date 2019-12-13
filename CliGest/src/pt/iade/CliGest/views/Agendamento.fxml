@@ -5,6 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
 
 <AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -14,11 +15,8 @@
          </font>
       </Label>
       <Button layoutX="227.0" layoutY="489.0" mnemonicParsing="false" onAction="#agendar" prefHeight="58.0" prefWidth="151.0" text="Agendar" />
-      <TextField layoutX="361.0" layoutY="108.0" />
-      <TextField layoutX="361.0" layoutY="170.0" />
-      <TextField layoutX="361.0" layoutY="240.0" />
-      <TextField layoutX="361.0" layoutY="300.0" />
-      <TextField layoutX="361.0" layoutY="369.0" />
+      <TextField fx:id="caixaHora" layoutX="361.0" layoutY="300.0" />
+      <TextField fx:id="caixaData" layoutX="361.0" layoutY="369.0" />
       <Label layoutX="152.0" layoutY="113.0" text="Paciente:">
          <font>
             <Font size="18.0" />
@@ -44,5 +42,8 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <TextFlow fx:id="caixaPaciente" layoutX="361.0" layoutY="108.0" prefHeight="33.0" prefWidth="161.0" />
+      <TextFlow fx:id="caixaMedico" layoutX="361.0" layoutY="170.0" prefHeight="33.0" prefWidth="161.0" />
+      <TextFlow fx:id="caixaEspecialidade" layoutX="361.0" layoutY="240.0" prefHeight="33.0" prefWidth="161.0" />
    </children>
 </AnchorPane>

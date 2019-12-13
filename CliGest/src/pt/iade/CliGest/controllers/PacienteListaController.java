@@ -30,8 +30,6 @@ public class PacienteListaController {
 			
 		    
 
-
-
 	@FXML
     void fechar (ActionEvent event) {
     	WindowManager.openMenuWindow();

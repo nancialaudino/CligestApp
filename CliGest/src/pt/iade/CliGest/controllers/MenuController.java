@@ -35,7 +35,7 @@ public class MenuController {
     	
     }
     
-    
+   
     @FXML
     void verListaMedicos(ActionEvent event) {
     	WindowManager.verMedicos(); 
