@@ -23,6 +23,8 @@ import pt.iade.CliGest.controllers.LoginController;
 import pt.iade.CliGest.Main;
 
 
+/**Nesta classe encontram-se todas as funções que serão chamadas
+ * quando se fizer a navegação entre as paginas. */
 public class WindowManager {
 
 	private static Stage primaryStage;
@@ -116,14 +118,7 @@ public class WindowManager {
 				primaryStage,new PacienteController(agendamento));
    }
     
-   /*
-   public static void comboBox () {
-	   openSceneInWindow("views/LoginView.fxml",
-				primaryStage,new ComboBoxController());
-   		
-	}
-   */
-	
+ 
    /** Método usado para abrir a jenela principal da aplicação,
 	 * a janela do Login */
 	

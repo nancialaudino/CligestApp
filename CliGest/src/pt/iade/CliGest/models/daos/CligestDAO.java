@@ -15,6 +15,8 @@ import pt.iade.CliGest.models.Especialidade;
 
 /**Classe responsável pela abstração e encapsulamento de dados da base dados
  * @autor: Nancia Laudino - 50036506 */
+
+
 public class CligestDAO {
 	
 	/** Metodo que vai buscar os dados de Logins dentro
@@ -124,11 +126,10 @@ public class CligestDAO {
 				
 	}
 	
+	/** Metodo que vai buscar os dados de agendamentos dentro
+	 * base de dados. Metodo procedimental*/
 	
-	
-	public static ObservableList <Agendamento> addAgendamento (Agendamento agendamento) {
-		ObservableList<Agendamento> agendamentos =
-				FXCollections.observableArrayList();
+	public static void addAgendamento (Agendamento agendamento) {
 		Connection conn =  DBConnector.getConnection();
 	   String sql = "INSERT INTO Agendamento (aid, especialidade_id, medico_id, utilizador_id, data_consulta , hora_consulta) VALUES (?,?,?,?,?,?)";
 	   int idEspecialidade = agendamento.getEspecialidade().getIdEspecialidade();
@@ -138,34 +139,25 @@ public class CligestDAO {
 	   String dataConsulta = agendamento.getData();
 	   String horaConsulta = agendamento.getHora();
 	   
-	   try (Statement stat = conn.createStatement()) {
-			((PreparedStatement) stat).setInt(1, idAgendamento);
-			((PreparedStatement) stat).setInt(2,idEspecialidade );
-			((PreparedStatement) stat).setInt(3,idMedico );
-			((PreparedStatement) stat).setInt(4,idPaciente );
-			((PreparedStatement) stat).setString(5,dataConsulta );
-			((PreparedStatement) stat).setString (6,horaConsulta );
-			stat.executeQuery(sql);
+	   try (PreparedStatement stat = conn.prepareStatement(sql)) {
+			(stat).setInt(1, idAgendamento);
+			(stat).setInt(2,idEspecialidade );
+			(stat).setInt(3,idMedico );
+			(stat).setInt(4,idPaciente );
+			(stat).setString(5,dataConsulta );
+			(stat).setString (6,horaConsulta );
+			stat.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 
 			
-		}
-	    
-	   CligestDAO.getAgendamentos();
+		} 
 	   
-	   
-		    return agendamentos;  
+		  
 				
 	}
 	 
 	 
-	
-	
-	
-	
-	
-	
 	
 	
 	/** Metodo que vai buscar os dados de agendamentos dentro
@@ -177,7 +169,7 @@ public class CligestDAO {
 		Connection conn =  DBConnector.getConnection();
 		try (Statement stat = conn.createStatement();
 				ResultSet rs = 
-						stat.executeQuery("select Especialidade.nome_especialidade, Especialidade.eid, Utilizador.nome_utilizador, Utilizador.uid, Medico.nome_medico, Medico.mid, Agendamento.aid, Agendamento.data_consulta, Agendamento.hora_consulta" + 
+						stat.executeQuery("select Agendamento.aid, Especialidade.nome_especialidade, Especialidade.eid, Utilizador.nome_utilizador, Utilizador.uid, Medico.nome_medico, Medico.mid, Agendamento.data_consulta, Agendamento.hora_consulta" + 
 								" FROM Agendamento JOIN Especialidade ON Agendamento.especialidade_id = Especialidade.eid JOIN Utilizador ON Agendamento.utilizador_id = uid" + 
 								" JOIN Medico ON Agendamento.medico_id=Medico.mid;");
 		)

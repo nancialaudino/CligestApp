@@ -1,5 +1,6 @@
 package pt.iade.CliGest.models;
 
+
 public class Agendamento {
 	private Medico medico;
 	private Especialidade especialidade;
@@ -8,6 +9,8 @@ public class Agendamento {
 	private String hora;
 	private int idAgendamento;
 
+	/**Construtor principal da Classe*/
+	
 	public Agendamento(int idAgendamento, Medico medico, Especialidade especialidade, Utilizador paciente, String data, String hora) {
 		this.medico = medico;
 		this.especialidade = especialidade;

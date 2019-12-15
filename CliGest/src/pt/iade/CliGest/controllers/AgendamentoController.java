@@ -7,6 +7,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import pt.iade.CliGest.WindowManager;
 import pt.iade.CliGest.models.Agendamento;
+import pt.iade.CliGest.models.daos.CligestDAO;
 
 public class AgendamentoController {
 	
@@ -34,6 +35,9 @@ public class AgendamentoController {
 	
 	@FXML
     void agendar (ActionEvent event) {
+		agendamento.setData(caixaData.getText());
+		agendamento.setHora(caixaHora.getText());
+		CligestDAO.addAgendamento(agendamento);
 		WindowManager.openMenuWindow();
 		
 
@@ -44,8 +48,6 @@ public class AgendamentoController {
 		caixaEspecialidade.getChildren().add(new Text(agendamento.getEspecialidade().getNomeEspecialidade()));
 		caixaMedico.getChildren().add(new Text(agendamento.getMedico().getNome()));
 		
-		agendamento.setData(caixaData.getText());
-		agendamento.setHora(caixaHora.getText());
 		
 		
 		

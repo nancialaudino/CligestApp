@@ -25,16 +25,18 @@ public Agendamento agendamento;
 	@FXML
     private ListView<Agendamento> agendamentosLV;
     private ObservableList<Agendamento> agendamentos;
-    private ObservableList<Agendamento> agendamentos2;
+   // private ObservableList<Agendamento> agendamentos2;
     @FXML
 	private void initialize () {
 
-    	agendamentos=CligestDAO.getAgendamentos();
+        agendamentos=CligestDAO.getAgendamentos();
+    	//agendamentos = CligestDAO.addAgendamento(agendamento);
+    	//agendamentos.add(agendamento);
 		
-    	agendamentos2=CligestDAO.addAgendamento(agendamento);
+    	//agendamentos2=CligestDAO.addAgendamento(agendamento);
   
     	agendamentosLV.setItems(agendamentos);
-    	agendamentosLV.setItems(agendamentos2);
+    	//agendamentosLV.setItems(agendamentos2);
     	
 
 }
