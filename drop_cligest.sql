@@ -1,0 +1,10 @@
+SET FOREIGN_KEY_CHECKS = 0;
+drop table Utilizador;
+drop table Medico;
+drop table Especialidade;
+drop table TipoUtilizador;
+drop table Seguradora;
+drop table Login;
+drop table Categoria;
+drop table Agendamento;
+SET FOREIGN_KEY_CHECKS = 1;
