@@ -13,11 +13,13 @@ import pt.iade.CliGest.models.Utilizador;
 import pt.iade.CliGest.models.Agendamento;
 import pt.iade.CliGest.models.Especialidade;
 
-
+/**Classe responsável pela abstração e encapsulamento de dados da base dados
+ * @autor: Nancia Laudino - 50036506 */
 public class CligestDAO {
 	
 	/** Metodo que vai buscar os dados de Logins dentro
-	 * base de dados. */
+	 * base de dados. 
+	 * @return Login - Uma observable list com os logins*/
 	
 	public static ObservableList <Login> getLogins() {
 		ObservableList<Login> logins =
@@ -43,7 +45,8 @@ public class CligestDAO {
 	
 	
 	/** Metodo que vai buscar os dados dos utilizadores dentro
-	 * base de dados. */
+	 * base de dados.
+	 * @return Utilizador - Uma observable list com os nomes dos utilizadores */
 	
 	public static ObservableList <Utilizador> getUtilizadores() {
 		ObservableList<Utilizador> utilizadores =
@@ -51,11 +54,12 @@ public class CligestDAO {
 		Connection conn =  DBConnector.getConnection();
 		try (Statement stat = conn.createStatement();
 				ResultSet rs = 
-						stat.executeQuery("select nome_utilizador from Utilizador join Categoria on categoria_id=cid where nome_categoria = 'Paciente'"))
+						stat.executeQuery("select nome_utilizador, uid from Utilizador join Categoria on categoria_id=cid where nome_categoria = 'Paciente'"))
 		{
 			while (rs.next()) {
 				String nome = rs.getString("nome_utilizador");
-				utilizadores.add(new Utilizador (nome));
+				int id = rs.getInt("uid");
+				utilizadores.add(new Utilizador (nome,id));
 
 			}
 		} catch (SQLException e) {
@@ -70,20 +74,21 @@ public class CligestDAO {
 	
 	
 	/** Metodo que vai buscar os dados dos médicos dentro
-	 * base de dados.*/
+	 * base de dados.
+	 * @return Medico - Uma observable list com os nomes dos medicos*/
 	public static ObservableList <Medico> getMedicos() {
 		ObservableList<Medico> medicos =
 				FXCollections.observableArrayList();
 		Connection conn =  DBConnector.getConnection();
 		try (Statement stat = conn.createStatement();
 				ResultSet rs = 
-						stat.executeQuery("Select nome_medico from Medico"))
+						stat.executeQuery("Select nome_medico, mid from Medico"))
 		{
 			while (rs.next()) {
 				String nome = rs.getString("nome_medico");
-				//String especialidade = rs.getString("Especialidade");
-				//double contacto = rs.getDouble("Contacto");
-				medicos.add(new Medico(nome));
+				int id = rs.getInt("mid");
+				medicos.add(new Medico(nome,id));
+				
 
 			}
 		} catch (SQLException e) {
@@ -95,18 +100,20 @@ public class CligestDAO {
 	}
 	
 	/** Metodo que vai buscar os dados da Especialidade dentro
-	 * base de dados.*/
+	 * base de dados.
+	 *@return Especilidade - Uma observable list com os nomes das especialidades*/
 	public static ObservableList <Especialidade> getEspecialidades() {
 		ObservableList<Especialidade> especialidades =
 				FXCollections.observableArrayList();
 		Connection conn =  DBConnector.getConnection();
 		try (Statement stat = conn.createStatement();
 				ResultSet rs = 
-						stat.executeQuery("Select nome_especialidade from Especialidade"))
+						stat.executeQuery("Select nome_especialidade, eid from Especialidade"))
 		{
 			while (rs.next()) {
 				String nomeEspecialidade = rs.getString("nome_especialidade");
-				especialidades.add (new Especialidade (nomeEspecialidade));
+				int id = rs.getInt("eid");
+				especialidades.add (new Especialidade (nomeEspecialidade,id));
 
 			}
 		} catch (SQLException e) {
@@ -119,32 +126,77 @@ public class CligestDAO {
 	
 	
 	
+	public static ObservableList <Agendamento> addAgendamento (Agendamento agendamento) {
+		ObservableList<Agendamento> agendamentos =
+				FXCollections.observableArrayList();
+		Connection conn =  DBConnector.getConnection();
+	   String sql = "INSERT INTO Agendamento (aid, especialidade_id, medico_id, utilizador_id, data_consulta , hora_consulta) VALUES (?,?,?,?,?,?)";
+	   int idEspecialidade = agendamento.getEspecialidade().getIdEspecialidade();
+	   int idMedico = agendamento.getMedico().getIdMedico();
+	   int idPaciente = agendamento.getPaciente().getIdUtilizador();
+	   int idAgendamento = agendamento.getIdAgendamento();
+	   String dataConsulta = agendamento.getData();
+	   String horaConsulta = agendamento.getHora();
+	   
+	   try (Statement stat = conn.createStatement()) {
+			((PreparedStatement) stat).setInt(1, idAgendamento);
+			((PreparedStatement) stat).setInt(2,idEspecialidade );
+			((PreparedStatement) stat).setInt(3,idMedico );
+			((PreparedStatement) stat).setInt(4,idPaciente );
+			((PreparedStatement) stat).setString(5,dataConsulta );
+			((PreparedStatement) stat).setString (6,horaConsulta );
+			stat.executeQuery(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+			
+		}
+	    
+	   CligestDAO.getAgendamentos();
+	   
+	   
+		    return agendamentos;  
+				
+	}
+	 
+	 
+	
+	
+	
+	
+	
+	
+	
+	
 	/** Metodo que vai buscar os dados de agendamentos dentro
-	 * base de dados.*/
+	 * base de dados.
+	 * @return Agendamento - Uma observable list com os agendamentos*/
 	public static ObservableList <Agendamento> getAgendamentos() {
 		ObservableList<Agendamento> agendamentos =
 				FXCollections.observableArrayList();
 		Connection conn =  DBConnector.getConnection();
 		try (Statement stat = conn.createStatement();
 				ResultSet rs = 
-						stat.executeQuery("select Especialidade.nome_especialidade, Utilizador.nome_utilizador, Medico.nome_medico, Agendamento.data_consulta, Agendamento.hora_consulta" + 
+						stat.executeQuery("select Especialidade.nome_especialidade, Especialidade.eid, Utilizador.nome_utilizador, Utilizador.uid, Medico.nome_medico, Medico.mid, Agendamento.aid, Agendamento.data_consulta, Agendamento.hora_consulta" + 
 								" FROM Agendamento JOIN Especialidade ON Agendamento.especialidade_id = Especialidade.eid JOIN Utilizador ON Agendamento.utilizador_id = uid" + 
 								" JOIN Medico ON Agendamento.medico_id=Medico.mid;");
 		)
 		{
 			while (rs.next()) {
-			
-				String medico = rs.getString("nome_medico");
-				System.out.println(medico);
-				String especialidade = rs.getString("nome_especialidade");
-				System.out.println(especialidade);
-				String paciente = rs.getString("nome_utilizador");
-				System.out.println(paciente);
+				String medicoNome = rs.getString("nome_medico");
+				int idMedico = rs.getInt("mid");
+				String especialidadeNome = rs.getString("nome_especialidade");
+				int idEspecialidade = rs.getInt("eid");
+				String pacienteNome = rs.getString("nome_utilizador");
+				int idPaciente = rs.getInt("uid");
 				String data = rs.getString("data_consulta");
-				System.out.println(data);
 				String hora = rs.getString("hora_consulta");
-				System.out.println(hora);
-				agendamentos.add(new Agendamento(medico,especialidade, paciente, data, hora));		
+				int idAgendamento = rs.getInt("aid");
+				Medico medico = new Medico(medicoNome, idMedico);
+				Especialidade especialidade = new Especialidade(especialidadeNome,idEspecialidade);
+				Utilizador paciente = new Utilizador (pacienteNome,idPaciente);
+				
+				agendamentos.add(new Agendamento(idAgendamento,medico,especialidade, paciente, data, hora));		
 			}
 			
 		} catch (SQLException e) {

@@ -15,6 +15,8 @@ import javafx.fxml.FXMLLoader;
 import pt.iade.CliGest.controllers.MenuController;
 
 
+/** Classe principal
+ *  @autor: Nancia Laudino - 50036506 */
 
 public class Main extends Application {
 	@Override

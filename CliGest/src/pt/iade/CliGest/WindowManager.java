@@ -103,9 +103,9 @@ public class WindowManager {
    
   /**Método usado para ver a lista de agendamentos
    * quer sejam os da base de dados ou feitos pela aplicação*/
-   public static void listaAgendamentos () {
+   public static void listaAgendamentos (Agendamento agendamento) {
 	   openSceneInWindow("views/agendamentosLista.fxml",
-				primaryStage,new AgendamentoListaController());
+				primaryStage,new AgendamentoListaController(agendamento));
    }
    
    /**Método usado para ver a lista de pacientes da base dados

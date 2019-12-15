@@ -44,6 +44,11 @@ public class AgendamentoController {
 		caixaEspecialidade.getChildren().add(new Text(agendamento.getEspecialidade().getNomeEspecialidade()));
 		caixaMedico.getChildren().add(new Text(agendamento.getMedico().getNome()));
 		
+		agendamento.setData(caixaData.getText());
+		agendamento.setHora(caixaHora.getText());
+		
+		
+		
 		
 	}
  

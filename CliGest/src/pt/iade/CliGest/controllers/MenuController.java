@@ -6,9 +6,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
 import pt.iade.CliGest.WindowManager;
+import pt.iade.CliGest.models.Agendamento;
 
 public class MenuController {
-	
+	public Agendamento agendamento;
 	    
     @FXML
     private void sair(ActionEvent event) {
@@ -24,7 +25,7 @@ public class MenuController {
     
     @FXML
     void verAgendamentos(ActionEvent event) {
-    	WindowManager.listaAgendamentos();
+    	WindowManager.listaAgendamentos(agendamento);
     }
 
     

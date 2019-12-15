@@ -6,31 +6,28 @@ public class Agendamento {
 	private Utilizador paciente;
 	private String data;
 	private String hora;
-	
-	
-	private String medico1;
-	private String especialidade1;
-	private String paciente1;
-	private String data1;
-	private String hora1;
-	 
-	public Agendamento(Medico medico, Especialidade especialidade, Utilizador paciente, String data, String hora) {
+	private int idAgendamento;
+
+	public Agendamento(int idAgendamento, Medico medico, Especialidade especialidade, Utilizador paciente, String data, String hora) {
 		this.medico = medico;
 		this.especialidade = especialidade;
 		this.paciente = paciente;
 		this.data = data;
 		this.hora = hora;
-	}
-	
-	public Agendamento(String medico1, String especialidade1, String paciente1, String data, String hora) {
-		this.medico1 = medico1;
-		this.especialidade1 = especialidade1;
-		this.paciente1 = paciente1;
-		this.data = data;
-		this.hora = hora;
+		this.idAgendamento= idAgendamento;
 	}
 	
 	
+	public int getIdAgendamento() {
+		return idAgendamento;
+	}
+
+
+	public void setIdAgendamento(int idAgendamento) {
+		this.idAgendamento = idAgendamento;
+	}
+
+
 	public Agendamento() {
 		
 	}
@@ -66,9 +63,9 @@ public class Agendamento {
 		this.hora = hora;
 	}
 	
-//	public String toString() {
-//		return medico.getNome() + " " + especialidade.getNomeEspecialidade() + " " + paciente.getNome() + " " + data + " " + hora; 
-//	}
+	public String toString() {
+		return "Médico: " + medico.getNome() + "; " + "Especialidade: " + especialidade.getNomeEspecialidade() + "; " + "Paciente: "+ paciente.getNome() + "; " + "Data: "+ data + "; " + "Hora:" + hora; 
+	}
 	
 	
 	

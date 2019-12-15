@@ -2,13 +2,20 @@ package pt.iade.CliGest.models;
 
 public class Medico  {
 	private String nome;
-	private String especialidade;
-	private double contacto;
+	private int idMedico;
 	
-	public Medico(String nome /*, String especialidade, double contacto*/) {
+	public Medico(String nome, int idMedico) {
 		this.nome = nome;
-		//this.especialidade = especialidade;
-		//this.contacto = contacto;
+		this.idMedico = idMedico;
+		
+	}
+
+	public int getIdMedico() {
+		return idMedico;
+	}
+
+	public void setIdMedico(int idMedico) {
+		this.idMedico = idMedico;
 	}
 
 	public String getNome() {
@@ -23,23 +30,5 @@ public class Medico  {
 	public String toString() {
 		return nome;
 	}
-/*
-	public String getEspecialidade() {
-		return especialidade;
-	}
 
-	public void setEspecialidade(String especialidade) {
-		this.especialidade = especialidade;
-	}
-
-	public double getContacto() {
-		return contacto;
-	}
-
-	public void setContacto(double contacto) {
-		this.contacto = contacto;
-	}
-
-	
-	*/
 }
