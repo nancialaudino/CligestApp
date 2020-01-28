@@ -23,9 +23,6 @@ Um admnistrador:
 * Edita informações de utilizadores
 * Elimina utilizadores
 * Faz agendamentos
-* Cancela agendamentos
-* Visualiza relatórios médicos
-* Visualiza exames médicos
 
 
 ## **Cenário Secundário**
