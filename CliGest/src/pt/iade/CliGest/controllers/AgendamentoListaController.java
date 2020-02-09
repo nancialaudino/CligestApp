@@ -12,9 +12,8 @@ import pt.iade.CliGest.models.Agendamento;
 import pt.iade.CliGest.models.Especialidade;
 import pt.iade.CliGest.models.daos.CligestDAO; 
 
-public class AgendamentoListaController {
-	//private String agendEscolhido;
-	
+/**Classe responsavel por mostrar a lista de agendamentos*/
+public class AgendamentoListaController {	
 public Agendamento agendamento;
 	
 	public AgendamentoListaController(Agendamento agendamento){
@@ -25,18 +24,12 @@ public Agendamento agendamento;
 	@FXML
     private ListView<Agendamento> agendamentosLV;
     private ObservableList<Agendamento> agendamentos;
-   // private ObservableList<Agendamento> agendamentos2;
     @FXML
 	private void initialize () {
 
         agendamentos=CligestDAO.getAgendamentos();
-    	//agendamentos = CligestDAO.addAgendamento(agendamento);
-    	//agendamentos.add(agendamento);
-		
-    	//agendamentos2=CligestDAO.addAgendamento(agendamento);
-  
     	agendamentosLV.setItems(agendamentos);
-    	//agendamentosLV.setItems(agendamentos2);
+    	
     	
 
 }

@@ -14,18 +14,21 @@ import pt.iade.CliGest.models.Especialidade;
 import pt.iade.CliGest.models.daos.CligestDAO;
 import pt.iade.CliGest.models.daos.DBConnector;
 
-/**Esta classe é a responsável pela selecção da especialidade para o agendamento.
- *Recebe um agendamento. Ao ser clicado o botão seguinte
- *leva-nos à página para a selecção do médico e envia o agendamento com a
+/**Esta classe e a responsavel pela seleccao da especialidade para o agendamento.
+ *Recebe um agendamento. Ao ser clicado o botao seguinte
+ *leva-nos a pagina para a seleccao do medico e envia o agendamento com a
  *especialidade que foi escolhida.*/
 
 public class EspecialidadeController {
-	
+	/**variavel que guarda a informacao de qual especialidade foi selecionada*/
 	private String especEscolhida;
 	private Agendamento agendamento = new Agendamento();
 	@FXML
     private ListView<Especialidade> especialidadeLV;
     private ObservableList<Especialidade> especialidades;
+    
+    
+	/**Metodo responsavel por obter todas as especialidades*/
     @FXML
 	private void initialize () {
     	especialidades = CligestDAO.getEspecialidades();
@@ -33,7 +36,7 @@ public class EspecialidadeController {
     	
 	}
  
-    /**Métdo usado para saltar para a página anterior
+    /**Metodo usado para saltar para a pagina anterior
 	 * ou seja, no menu principal*/
     
     @FXML
@@ -42,8 +45,8 @@ public class EspecialidadeController {
 
     }
      
-    /**Métdo usado para saltar para a página seguinte
-	 * onde é feita a escolha do Médico*/
+    /**Metodo usado para saltar para a pagina seguinte
+	 * onde e feita a escolha do Medico*/
     @FXML
     void seguinte(ActionEvent event) {
 		Especialidade especEscolhida = especialidadeLV.getSelectionModel().getSelectedItem();

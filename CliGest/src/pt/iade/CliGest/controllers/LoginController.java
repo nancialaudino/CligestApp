@@ -1,6 +1,7 @@
  package pt.iade.CliGest.controllers;
 import java.awt.Label;
 
+
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import java.io.IOException;
@@ -30,6 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javafx.collections.ObservableList;
 
+/**Classe responsavel por fazer a autenticacao dos utilizadores */
 
 public class LoginController {
 
@@ -49,9 +51,9 @@ public class LoginController {
     private Text labelstatusLB;
     
     
-    /** Método que faz a autenticação do utilizador
-     * Verfifica se o username e a password estão corretos
-     * para que o utilizador possa aceder à aplicação, se tiverem 
+    /** Metodo que faz a autenticacao do utilizador
+     * Verfifica se o username e a password estao corretos
+     * para que o utilizador possa aceder a aplicacao, se tiverem 
      * incorretos devolve um erro. */
     @FXML
     public void loginTela (ActionEvent event) throws IOException {

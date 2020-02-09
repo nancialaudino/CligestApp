@@ -3,11 +3,11 @@ package pt.iade.CliGest.models.daos;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
+/**Classe responsavel por fazer a conexao com a base de dados*/
 public final class DBConnector {
-	private static final String URL = "jdbc:mysql://remotemysql.com:3306/z0WAKr3q4Z?useSSL=false";
-	private static final String PASS = "skoGuTPqqZ";
-	private static final String USER = "z0WAKr3q4Z";
+	private static final String URL = "jdbc:mysql://remotemysql.com:3306/iXLJ7yYZQY?useSSL=false";
+	private static final String PASS = "jejucTMTpU";
+	private static final String USER = "iXLJ7yYZQY";
 
 	private static Connection connector;
 	private DBConnector () {}

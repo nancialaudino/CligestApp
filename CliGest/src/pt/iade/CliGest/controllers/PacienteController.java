@@ -56,7 +56,8 @@ private Agendamento agendamento;
     }
     
     /**Métdo usado para voltar para a página anterior
-	 * onde é feita a escolha do médico*/
+	 * onde é feita a escolha do médico
+	 * @param event - evento */
     @FXML
     void anterior (ActionEvent event) {
     	WindowManager.seguinte(agendamento);
@@ -70,8 +71,7 @@ private Agendamento agendamento;
     }
 	
     
-   
- 
+  
     
 	
 

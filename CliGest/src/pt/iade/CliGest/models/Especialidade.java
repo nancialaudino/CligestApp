@@ -1,5 +1,8 @@
 package pt.iade.CliGest.models;
 
+/**Classe que representa a Especialidae. Recebe o nome e o id da especialidade
+ * que serao usados para fazer o agendamento*/
+
 public class Especialidade {
 	private String nomeEspecialidade;
 	private int idEspecialidade;

@@ -9,7 +9,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import pt.iade.CliGest.controllers.MainController;
 import pt.iade.CliGest.controllers.MedicoController;
 import pt.iade.CliGest.controllers.MedicoListaController;
 import pt.iade.CliGest.controllers.MenuController;
@@ -23,8 +22,10 @@ import pt.iade.CliGest.controllers.LoginController;
 import pt.iade.CliGest.Main;
 
 
-/**Nesta classe encontram-se todas as funções que serão chamadas
- * quando se fizer a navegação entre as paginas. */
+/**Nesta classe encontram-se todas as funcoes que serao chamadas
+ * quando se fizer a navegacao entre as paginas. 
+ * @author Nancia Laudino - 50036506*/
+
 public class WindowManager {
 
 	private static Stage primaryStage;
@@ -39,8 +40,8 @@ public class WindowManager {
 				primaryStage,new MenuController());
 	}
 	
-	/** Método usado para abrir a página dos Menus logo a seguir
-	 * a página do Login */
+	/** Metodo usado para abrir a pagina dos Menus logo a seguir
+	 * a pagina do Login */
 	
 	
 	public static void openMenuWindow() {
@@ -50,8 +51,8 @@ public class WindowManager {
 	}
 		
 		
-	/** Método usado na classe MenuController para sair da Aplicação, ou seja
-	 * voltar à página do Login */
+	/** Metodo usado na classe MenuController para sair da Aplicacao, ou seja
+	 * voltar a pagina do Login */
 	
    public static void sairDaAplicação () {
 	   openSceneInWindow("views/LoginView.fxml",
@@ -59,8 +60,8 @@ public class WindowManager {
    		
 	}
    
-	/** Método usado na classe MenuController para escolher a opção de agendar uma
-	 * consulta cuja página seguinte consiste em escolher a especialidade. */
+	/** Metodo usado na classe MenuController para escolher a opcao de agendar uma
+	 * consulta cuja pagina seguinte consiste em escolher a especialidade. */
    
    public static void agendarConsulta () {
 	   openSceneInWindow("views/selectEspecialidade.fxml",
@@ -85,9 +86,9 @@ public class WindowManager {
    }
    
 	
-   /**Metodo usado na classe EspecialidadeController para avançar para a página seguinte
-    * onde é feita a escolha do Médico
- * @param agendamento */
+   /**Metodo usado na classe EspecialidadeController para avançar para a pagina seguinte
+    * onde e feita a escolha do Medico
+    * @param agendamento - objeto agendamento*/
    
    public static void seguinte (Agendamento agendamento) {
 	   openSceneInWindow("views/selectMedico.fxml",
@@ -95,31 +96,32 @@ public class WindowManager {
    		
 	}
    
-   /**Método usado para agendar uma consulta
- * @param agendamento */
+   /**Metodo usado para agendar uma consulta
+     * @param agendamento - objeto agendameto */
    public static void agendar (Agendamento agendamento) {
 	   openSceneInWindow("views/Agendamento.fxml",
 				primaryStage,new AgendamentoController(agendamento));
    }
    
    
-  /**Método usado para ver a lista de agendamentos
-   * quer sejam os da base de dados ou feitos pela aplicação*/
+  /**Metodo usado para ver a lista de agendamentos
+   * quer sejam os da base de dados ou feitos pela aplicacao
+   * @param agendamento - objeto qgendamento*/
    public static void listaAgendamentos (Agendamento agendamento) {
 	   openSceneInWindow("views/agendamentosLista.fxml",
 				primaryStage,new AgendamentoListaController(agendamento));
    }
    
-   /**Método usado para ver a lista de pacientes da base dados
+   /**Metodo usado para ver a lista de pacientes da base dados
     * para se poder fazer um agendamento
- * @param agendamento */
+    * @param agendamento - objeto agendamento*/
    public static void selectPaciente (Agendamento agendamento) {
 	   openSceneInWindow("views/selectPaciente.fxml",
 				primaryStage,new PacienteController(agendamento));
    }
     
  
-   /** Método usado para abrir a jenela principal da aplicação,
+   /** Metodo usado para abrir a jenela principal da aplicacao,
 	 * a janela do Login */
 	
 	public static void openMainWindow() {

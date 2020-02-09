@@ -13,11 +13,11 @@ import pt.iade.CliGest.models.Medico;
 import pt.iade.CliGest.models.daos.CligestDAO;
 
 
-/**Esta classe é a responsável pela selecção do médico para o agendamento.
- *Recebe o agendamento, já com a especialidade inserida
- *no controlador anterior. Ao ser clicado o botão avançar
- *leva-nos à página para a selecção do paciente e envia o 
- *médico que foi escolhido.*/
+/**Esta classe e a responsavel pela seleccao do medico para o agendamento.
+ *Recebe o agendamento, ja com a especialidade inserida
+ *no controlador anterior. Ao ser clicado o botao avançar
+ *leva-nos a pagina para a seleccao do paciente e envia o 
+ *medico que foi escolhido.*/
 
 public class MedicoController { 
 	private String medicoEscolhido;
@@ -29,7 +29,7 @@ public class MedicoController {
 	public MedicoController(Agendamento agendamento) {
 		this.agendamento = agendamento;
 	}
-
+	/**Metodo responsavel por obter todos os medicos*/
 	@FXML
 	private void initialize () {
 		medicos = CligestDAO.getMedicos();
@@ -53,8 +53,8 @@ public class MedicoController {
 		*/
 	} 
     
-	   /**Métdo usado para saltar para a página seguinte
-	    * onde é feita a escolha do Paciente*/
+	   /**Metodo usado para saltar para a pagina seguinte
+	    * onde e feita a escolha do Paciente*/
 	    @FXML
 	    void avancar (ActionEvent event) {
 		Medico medicoEscolhido = medicoLV.getSelectionModel().getSelectedItem();
@@ -62,8 +62,8 @@ public class MedicoController {
     	WindowManager.selectPaciente(agendamento);
 
 	    }
-	    /**Métdo usado para voltar para a página anterior
-		 * onde é feita a escolha da especialidade*/
+	    /**Metodo usado para voltar para a pagina anterior
+		 * onde e feita a escolha da especialidade*/
 	    @FXML
 	    void voltar (ActionEvent event) {
 	    WindowManager.agendarConsulta();

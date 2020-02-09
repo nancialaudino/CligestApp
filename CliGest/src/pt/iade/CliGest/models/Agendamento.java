@@ -1,6 +1,8 @@
 package pt.iade.CliGest.models;
 
-
+/**Classe que representa o agendamento. Recebe o id, o medico, a especialidade, o
+ * utilizador, a data e a hora do agendamento.
+ */
 public class Agendamento {
 	private Medico medico;
 	private Especialidade especialidade;
@@ -9,7 +11,16 @@ public class Agendamento {
 	private String hora;
 	private int idAgendamento;
 
-	/**Construtor principal da Classe*/
+	/**Construtor principal da Classe
+	 * @param idAgendamento - id do agendamento
+	 * @param medico - medico da consulta
+	 * @param especialidade - especialidade da consulta
+	 * @param paciente - paciente
+	 * @param data - data da consulta
+	 * @param hora - hora da consulta 
+	 * 
+	 * 
+	 * */
 	
 	public Agendamento(int idAgendamento, Medico medico, Especialidade especialidade, Utilizador paciente, String data, String hora) {
 		this.medico = medico;
@@ -69,7 +80,6 @@ public class Agendamento {
 	public String toString() {
 		return "Médico: " + medico.getNome() + "; " + "Especialidade: " + especialidade.getNomeEspecialidade() + "; " + "Paciente: "+ paciente.getNome() + "; " + "Data: "+ data + "; " + "Hora:" + hora; 
 	}
-	
 	
 	
 

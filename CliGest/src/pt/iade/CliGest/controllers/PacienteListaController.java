@@ -9,12 +9,13 @@ import pt.iade.CliGest.WindowManager;
 import pt.iade.CliGest.models.Utilizador;
 import pt.iade.CliGest.models.daos.CligestDAO;
 
+/**Classe responsável por mostrar a lista de pacientes*/
 public class PacienteListaController {
 	@FXML
     private ListView<String> pacientesListaLV;
     private ObservableList<Utilizador> pacientes;
 		
-		    
+	/**Metodo que mostra a lista de todos os pacientes*/	    
 	@FXML
 	private void initialize () {
 		    	pacientes = CligestDAO.getUtilizadores();
@@ -26,9 +27,7 @@ public class PacienteListaController {
 		    	pacientesListaLV.getSelectionModel();
 		    	
 		    	
-		    }
-			
-		    
+		    }	    
 
 	@FXML
     void fechar (ActionEvent event) {

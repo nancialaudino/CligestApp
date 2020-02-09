@@ -15,20 +15,16 @@ import javafx.fxml.FXMLLoader;
 import pt.iade.CliGest.controllers.MenuController;
 
 
-/** Classe principal
- *  @autor: Nancia Laudino - 50036506 */
+/** Classe principal do projeto
+ *  @author: Nancia Laudino - 50036506 */
 
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		WindowManager.setPrimaryStage(primaryStage);
 		WindowManager.openMainWindow();
-		//WindowManager.agendarConsulta();
-		
-		
+				
 	}
-
-	
 	
 	public static void main(String[]  args) {
 		launch(args);

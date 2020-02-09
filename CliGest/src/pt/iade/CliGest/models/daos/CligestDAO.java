@@ -13,8 +13,8 @@ import pt.iade.CliGest.models.Utilizador;
 import pt.iade.CliGest.models.Agendamento;
 import pt.iade.CliGest.models.Especialidade;
 
-/**Classe responsável pela abstração e encapsulamento de dados da base dados
- * @autor: Nancia Laudino - 50036506 */
+/**Classe responsavel pela abstracao e encapsulamento de dados da base dados
+ * @author: Nancia Laudino - 50036506 */
 
 
 public class CligestDAO {
@@ -75,9 +75,9 @@ public class CligestDAO {
 
 	
 	
-	/** Metodo que vai buscar os dados dos médicos dentro
+	/** Metodo que vai buscar os dados dos medicos dentro
 	 * base de dados.
-	 * @return Medico - Uma observable list com os nomes dos medicos*/
+	 * @return medico - Uma observable list com os nomes dos medicos*/
 	public static ObservableList <Medico> getMedicos() {
 		ObservableList<Medico> medicos =
 				FXCollections.observableArrayList();
@@ -103,7 +103,7 @@ public class CligestDAO {
 	
 	/** Metodo que vai buscar os dados da Especialidade dentro
 	 * base de dados.
-	 *@return Especilidade - Uma observable list com os nomes das especialidades*/
+	 * @return especilidade - Uma observable list com os nomes das especialidades*/
 	public static ObservableList <Especialidade> getEspecialidades() {
 		ObservableList<Especialidade> especialidades =
 				FXCollections.observableArrayList();
@@ -126,8 +126,9 @@ public class CligestDAO {
 				
 	}
 	
-	/** Metodo que vai buscar os dados de agendamentos dentro
-	 * base de dados. Metodo procedimental*/
+	/** Metodo que insere agendamentos dentro
+	 * base de dados. Metodo procedimental
+	 * @param agendamento*/
 	
 	public static void addAgendamento (Agendamento agendamento) {
 		Connection conn =  DBConnector.getConnection();
@@ -156,7 +157,6 @@ public class CligestDAO {
 		  
 				
 	}
-	 
 	 
 	
 	
